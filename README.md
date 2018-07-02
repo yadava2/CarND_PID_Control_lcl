@@ -1,7 +1,29 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
----
+
+<div align="center">
+<a href="https://youtu.be/vNrAvFDXuxI" target="_blank"><img src="https://github.com/yadava2/CarND_PID_Control_lcl/blob/master/Workspace%201_002.png"
+alt="youtube link" width="480" height="360" border="10" /></a>
+</div>
+Click on the image to see the video
+
+## Discussion 
+The following values for components P,I,D have been used: Kp = 0.15 Ki = 0.0001 Kd = 2.5
+
+During the experimentation, the car was run in only P, only I, only D and the fianl PID modes to examine the effect of each.
+
+P: Contributes to the stability and medium rate- responsiveness.
+Proportional term Kp steers harder the further away we are from the desired trajectory. Kp alone causes oscilation which is not desirable property so the additional term is needed - Kd.
+
+D: Showed fast rate-responsiveness but was very sensitive to noise
+Differential term Kd is the resistance if the car is moving to quickly toward the desired trajectory line.
+
+I: helped in tracking and disturbance rejection, but has slow rate responsiveness. It caused increased oscillation for higher values. Ki is the integral term - adjust to the bias in the system.
+
+Due to time constrains is have used manual tuning. First, tuned proportional component Kp, the other terms are zeroed. After I minimized oscilation I started to tune differential term Kd. At the end, integral term Ki has been tuned.
+The car is running fine at 30 mph.
+
 
 ## Dependencies
 
